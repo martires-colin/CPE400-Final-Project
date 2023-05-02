@@ -10,4 +10,6 @@ Topic 4: Dynamic routing echanism design in faulty network
 
 * pyvis
 
-    * `pip install pyvis`
+* networkx
+
+    * `pip install -r requirements.txt`
