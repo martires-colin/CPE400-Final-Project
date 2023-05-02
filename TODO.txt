@@ -1,0 +1,2 @@
+- Pyvis does not support deleting nodes
+    - may have to integrate networkx to support node deletion
