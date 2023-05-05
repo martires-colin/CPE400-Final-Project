@@ -21,10 +21,11 @@ elarge = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] > 0.5]
 esmall = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] <= 0.5]
 
 # ---get shortest path
-path = nx.shortest_path(G,source="g",target="d")
+path = nx.shortest_path(G,source="g",target="a")
 path_edges = list(zip(path,path[1:]))
 
-
+adj_list = nx.adjacency_matrix(G)
+print(adj_list)
 
 
 pos = nx.spring_layout(G, seed=2)  # positions for all nodes - seed for reproducibility
@@ -48,8 +49,59 @@ nx.draw_networkx_labels(G, pos, font_size=20, font_family="sans-serif")
 edge_labels = nx.get_edge_attributes(G, "weight")
 nx.draw_networkx_edge_labels(G, pos, edge_labels)
 
+
+
 ax = plt.gca()
 ax.margins(0.08)
 plt.axis("off")
 plt.tight_layout()
 plt.show()
+
+
+
+# G.remove_edge("f", "c")
+G.remove_node("c")
+# edges = list(G.edges("c"))
+# G.remove_edges_from(edges)
+
+
+# Maybe use this to color shortest path
+elarge = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] > 0.5]
+esmall = [(u, v) for (u, v, d) in G.edges(data=True) if d["weight"] <= 0.5]
+
+# ---get shortest path
+path = nx.shortest_path(G,source="g",target="a")
+path_edges = list(zip(path,path[1:]))
+print(path_edges)
+
+
+
+
+pos2 = nx.spring_layout(G, pos=pos)  # positions for all nodes - seed for reproducibility
+nx.draw(G,pos2,node_color='k')
+
+# nodes
+nx.draw_networkx_nodes(G, pos2, node_size=700)
+
+# edges
+# nx.draw_networkx_edges(G, pos, edgelist=elarge, width=6)
+# nx.draw_networkx_edges(
+#     G, pos, edgelist=esmall, width=6, alpha=0.5, edge_color="b", style="dashed"
+# )
+
+nx.draw_networkx_nodes(G,pos2,nodelist=path,node_color='r')
+nx.draw_networkx_edges(G,pos2,edgelist=path_edges,edge_color='r',width=5)
+
+# node labels
+nx.draw_networkx_labels(G, pos2, font_size=20, font_family="sans-serif")
+# edge weight labels
+edge_labels = nx.get_edge_attributes(G, "weight")
+nx.draw_networkx_edge_labels(G, pos2, edge_labels)
+
+ax = plt.gca()
+ax.margins(0.08)
+plt.axis("off")
+plt.tight_layout()
+plt.show()
+
+G.remove_node("c")
