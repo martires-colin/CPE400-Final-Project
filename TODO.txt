@@ -1,1 +1,0 @@
-- maybe find out if we can have lengths proportional to weights
