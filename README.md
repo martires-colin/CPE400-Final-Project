@@ -27,11 +27,14 @@ To run the program you will input the code into terminal:
 This will start the program where you the user will be propmted to enter a command. (1 - 6)
 Each command will have a utility that has its unique functionailty. 
 
-1 - reset graph - will restore the nodes if any have been deleted or made inactive 
+1 - reset graph 
+  - will restore the nodes if any have been deleted or made inactive 
 
-2 - Remove Random Node - will chose a random node and deactivate it from the map 
+2 - Remove Random Node
+  - will chose a random node and deactivate it from the map 
 
-3 - Remove Selected Node - will allow the user to choose which node they want to deactivate.
+3 - Remove Selected Node
+  - will allow the user to choose which node they want to deactivate.
 
 4 - Show Graph 
   - Is the display functionaily it will display the graph with the current status of each node if active or deactive
@@ -40,4 +43,5 @@ Each command will have a utility that has its unique functionailty.
   - This will display the path of to the nodes after asking the user which nodes they want a path too if there is a path it will display it and also calcuate the optimal weight.
   - If there is no path a message will display propmting to the user that the path could not be made. 
 
-6 - Exit - will exit the program.
+6 - Exit
+  - will exit the program.
