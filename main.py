@@ -54,7 +54,7 @@ def main():
                         cur_node = prev_nodes[cur_node]
                         
                     print(f'Optimal Path from Node {src} to Node {dest}: {optimal_path}')
-                    print(f'Optimal Path Cost from Node {src} to Node {dest}: {shortest_paths[int(dest)]}')
+                    print(f'Optimal Path Cost from Node {src} to Node {dest}: {round(shortest_paths[int(dest)], 2)}')
                     path_edges = list(zip(optimal_path,optimal_path[1:]))
 
                     displayGraph(G, pos, color_map=color_map, path_edges=path_edges)
