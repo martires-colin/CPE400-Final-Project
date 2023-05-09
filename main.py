@@ -19,6 +19,7 @@ def main():
         while(True):
             displayMenu()
             userInput = input("Enter command: ")
+            print("")
 
             # Reset Graph to original State
             if userInput == "1":
@@ -152,6 +153,11 @@ def kill_node(graph, color_map):
 
     if hasAliveNodes:
         x = input("choose a node to kill: ")
+
+        if int(x) not in valid_nodes:
+            print(f'Node {x} is already dead!')
+            return
+
         rm_edges = list(graph.edges(int(x)))
         for edge in rm_edges:
             graph.remove_edge(edge[0], edge[1])
