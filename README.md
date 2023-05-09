@@ -9,7 +9,6 @@ Topic 4: Dynamic routing echanism design in faulty network
 ## Requirements
 
 * python 
-* pyvis
 * networkx
 
 **To Run Program**
